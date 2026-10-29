@@ -1,0 +1,28 @@
+[package]
+name = "rustllmroute-guardrails"
+description = "Guardrail trait, selection, text extraction and built-in guardrails for RustLLMroute"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+metrics.workspace = true
+async-trait.workspace = true
+fancy-regex.workspace = true
+http.workspace = true
+regex.workspace = true
+reqwest.workspace = true
+rustllmroute-config.workspace = true
+rustllmroute-types.workspace = true
+secrecy.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+rstest.workspace = true
+wiremock.workspace = true

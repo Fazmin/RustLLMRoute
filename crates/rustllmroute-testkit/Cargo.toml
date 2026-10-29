@@ -1,0 +1,27 @@
+[package]
+name = "rustllmroute-testkit"
+description = "Test and load tooling for RustLLMroute: a fake OpenAI-compatible upstream and a load generator"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[[bin]]
+name = "fake-upstream"
+path = "src/bin/fake_upstream.rs"
+
+[[bin]]
+name = "loadgen"
+path = "src/bin/loadgen.rs"
+
+[dependencies]
+axum.workspace = true
+bytes.workspace = true
+clap.workspace = true
+futures-util.workspace = true
+http.workspace = true
+reqwest.workspace = true
+serde_json.workspace = true
+tokio.workspace = true

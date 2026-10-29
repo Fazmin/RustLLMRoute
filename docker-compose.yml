@@ -1,0 +1,16 @@
+services:
+  gateway:
+    build: .
+    image: rustllmroute:local
+    ports:
+      - "4000:4000"
+    env_file:
+      - .env
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - rustllmroute_data:/data
+    stop_grace_period: 40s
+    restart: unless-stopped
+
+volumes:
+  rustllmroute_data:

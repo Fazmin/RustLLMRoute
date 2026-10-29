@@ -1,0 +1,26 @@
+[package]
+name = "rustllmroute-framer"
+description = "SSE, NDJSON and AWS event-stream framing codecs (SSE and event-stream codecs copied from LiteLLM's litellm-rust workspace, MIT)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+default = ["aws", "sse"]
+aws = ["dep:aws-smithy-eventstream", "dep:aws-smithy-types"]
+sse = []
+
+[dependencies]
+aws-smithy-eventstream = { workspace = true, optional = true }
+aws-smithy-types = { workspace = true, optional = true }
+bytes.workspace = true
+futures-util.workspace = true
+thiserror.workspace = true
+tokio-util.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+rstest.workspace = true
+tokio.workspace = true

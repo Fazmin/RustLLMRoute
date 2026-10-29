@@ -1,0 +1,46 @@
+[package]
+name = "rustllmroute-core"
+description = "Request pipeline for RustLLMroute: deployments, HTTP executor, streaming normalisation and encoding, hooks seam"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+metrics.workspace = true
+arc-swap.workspace = true
+async-trait.workspace = true
+aws-credential-types.workspace = true
+aws-sigv4.workspace = true
+base64.workspace = true
+bytes.workspace = true
+chrono.workspace = true
+futures-util.workspace = true
+http.workspace = true
+jsonwebtoken.workspace = true
+rand.workspace = true
+reqwest.workspace = true
+rustllmroute-router.workspace = true
+rustllmroute-tokens.workspace = true
+rustllmroute-catalog.workspace = true
+rustllmroute-config.workspace = true
+rustllmroute-framer.workspace = true
+rustllmroute-guardrails.workspace = true
+rustllmroute-providers.workspace = true
+rustllmroute-types.workspace = true
+secrecy.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+strum.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+tracing.workspace = true
+url.workspace = true
+uuid.workspace = true
+
+[dev-dependencies]
+rstest.workspace = true
+serde_yaml_ng.workspace = true
+wiremock.workspace = true

@@ -1,0 +1,28 @@
+[package]
+name = "rustllmroute-providers"
+description = "Provider transforms (OpenAI-compatible table, Azure, Anthropic, Gemini, Vertex AI, Bedrock) and auth helpers for RustLLMroute"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+base64.workspace = true
+bitflags.workspace = true
+bytes.workspace = true
+futures-util.workspace = true
+http.workspace = true
+regex.workspace = true
+rustllmroute-types.workspace = true
+secrecy.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+url.workspace = true
+uuid.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+rstest.workspace = true

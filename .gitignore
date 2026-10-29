@@ -1,0 +1,10 @@
+/target/
+/ui/node_modules/
+/ui/dist/
+/data/
+.env
+*.db
+*.db-wal
+*.db-shm
+/config.yaml
+/docs/PLAN.md

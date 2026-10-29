@@ -1,0 +1,21 @@
+# The smallest useful RustLLMroute configuration: one OpenAI model and one Anthropic model,
+# keys from the environment. The Docker image uses this file as its default config.
+#
+#   export LITELLM_MASTER_KEY=sk-anything   OPENAI_API_KEY=sk-...   ANTHROPIC_API_KEY=sk-ant-...
+#   rustllmroute --config config.yaml
+#
+# Remove a model you do not have a key for; see config.example.yaml for every option.
+
+model_list:
+  - model_name: gpt-4o-mini
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+  - model_name: claude
+    litellm_params:
+      model: anthropic/claude-sonnet-4-5
+      api_key: os.environ/ANTHROPIC_API_KEY
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY

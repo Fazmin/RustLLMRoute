@@ -1,0 +1,94 @@
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.94"
+license = "MIT"
+repository = "https://github.com/fazmin/RustLLMRoute"
+
+[workspace.dependencies]
+rustllmroute-types = { path = "crates/rustllmroute-types" }
+rustllmroute-framer = { path = "crates/rustllmroute-framer" }
+rustllmroute-catalog = { path = "crates/rustllmroute-catalog" }
+rustllmroute-tokens = { path = "crates/rustllmroute-tokens" }
+rustllmroute-config = { path = "crates/rustllmroute-config" }
+rustllmroute-router = { path = "crates/rustllmroute-router" }
+rustllmroute-guardrails = { path = "crates/rustllmroute-guardrails" }
+rustllmroute-providers = { path = "crates/rustllmroute-providers" }
+rustllmroute-core = { path = "crates/rustllmroute-core" }
+rustllmroute-db = { path = "crates/rustllmroute-db" }
+rustllmroute-control = { path = "crates/rustllmroute-control" }
+rustllmroute-observe = { path = "crates/rustllmroute-observe" }
+rustllmroute-testkit = { path = "crates/rustllmroute-testkit" }
+
+anyhow = "1"
+arc-swap = "1.7"
+async-trait = "0.1"
+aws-smithy-eventstream = "=0.61.4"
+aws-smithy-types = "1.6"
+aws-sigv4 = { version = "1", default-features = false, features = ["sign-http", "http1"] }
+aws-credential-types = "1"
+axum = { version = "0.8.9", default-features = false, features = ["http1", "http2", "json", "tokio", "query", "matched-path"] }
+base64 = "0.22"
+bitflags = "2"
+bytes = "1"
+chrono = { version = "0.4.45", default-features = false, features = ["std", "clock", "serde"] }
+clap = { version = "4.6", features = ["derive", "env"] }
+dashmap = "6"
+fancy-regex = "0.19"
+futures-util = { version = "0.3", default-features = false, features = ["std", "sink"] }
+http = "1"
+indexmap = { version = "2", features = ["serde"] }
+http-body-util = "0.1"
+moka = { version = "0.12.16", features = ["future", "sync"] }
+parking_lot = "0.12.5"
+rand = "0.9"
+rust-embed = { version = "8", features = ["interpolate-folder-path", "mime-guess"] }
+regex = "1"
+reqwest = { version = "0.13", default-features = false, features = ["json", "rustls", "http2", "stream", "query", "gzip"] }
+secrecy = { version = "0.10", features = ["serde"] }
+serde = { version = "1.0", features = ["derive", "rc"] }
+serde_json = { version = "1.0", features = ["float_roundtrip", "raw_value"] }
+serde_with = { version = "3.21", default-features = false, features = ["std", "macros"] }
+serde_yaml_ng = "0.10"
+jsonwebtoken = { version = "11", default-features = false, features = ["rust_crypto", "use_pem"] }
+metrics = "0.24"
+metrics-exporter-prometheus = { version = "0.18", default-features = false }
+metrics-util = "0.20"
+opentelemetry = "0.33"
+opentelemetry_sdk = { version = "0.33", features = ["rt-tokio"] }
+opentelemetry-otlp = { version = "0.33", default-features = false, features = ["trace", "http-proto", "reqwest-blocking-client", "reqwest-rustls"] }
+tracing-opentelemetry = "0.34"
+sqlx = { version = "0.9", default-features = false, features = ["runtime-tokio", "tls-rustls-ring", "sqlite", "migrate", "derive", "macros"] }
+sha2 = "0.10"
+strum = { version = "0.28", features = ["derive"] }
+subtle = "2"
+thiserror = "2.0"
+tiktoken-rs = "0.12"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "net", "signal", "sync", "io-util"] }
+tokio-util = { version = "0.7", features = ["codec", "io", "rt"] }
+tower = "0.5"
+tower-http = { version = "0.7", features = ["trace", "limit", "cors", "set-header", "request-id"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json", "fmt"] }
+url = "2.5"
+uuid = { version = "1", features = ["v7", "serde"] }
+
+# dev
+criterion = "0.8"
+proptest = "1.7"
+rstest = "0.26"
+wiremock = "0.6.5"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "unwind"
+strip = "symbols"
+
+[profile.dev.package."*"]
+opt-level = 1

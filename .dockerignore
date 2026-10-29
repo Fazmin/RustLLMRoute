@@ -1,0 +1,9 @@
+target/
+.git/
+data/
+ui/node_modules/
+ui/dist/
+.env
+*.db
+*.db-wal
+*.db-shm

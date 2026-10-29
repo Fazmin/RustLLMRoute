@@ -1,0 +1,20 @@
+[package]
+name = "rustllmroute-observe"
+description = "Prometheus recorder, /metrics rendering and OpenTelemetry setup for RustLLMroute"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+metrics.workspace = true
+metrics-exporter-prometheus.workspace = true
+opentelemetry.workspace = true
+opentelemetry-otlp.workspace = true
+opentelemetry_sdk.workspace = true
+rustllmroute-types.workspace = true
+tracing.workspace = true
+tracing-opentelemetry.workspace = true
+tracing-subscriber.workspace = true
+metrics-util.workspace = true

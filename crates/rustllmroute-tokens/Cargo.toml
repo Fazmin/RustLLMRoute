@@ -1,0 +1,16 @@
+[package]
+name = "rustllmroute-tokens"
+description = "Token counting for RustLLMroute (tiktoken encodings, chat and Messages request estimates)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+rustllmroute-types.workspace = true
+serde_json.workspace = true
+tiktoken-rs.workspace = true
+
+[dev-dependencies]
+rstest.workspace = true

@@ -1,0 +1,55 @@
+[package]
+name = "rustllmroute-server"
+description = "RustLLMroute binary: axum HTTP server, routes, auth hooks and process lifecycle"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "rustllmroute"
+path = "src/main.rs"
+
+[dependencies]
+arc-swap.workspace = true
+jsonwebtoken.workspace = true
+metrics.workspace = true
+regex.workspace = true
+async-trait.workspace = true
+axum.workspace = true
+base64.workspace = true
+bytes.workspace = true
+clap.workspace = true
+futures-util.workspace = true
+http.workspace = true
+rand.workspace = true
+reqwest.workspace = true
+rust-embed.workspace = true
+rustllmroute-observe.workspace = true
+rustllmroute-router.workspace = true
+rustllmroute-tokens.workspace = true
+rustllmroute-catalog.workspace = true
+rustllmroute-config.workspace = true
+rustllmroute-control.workspace = true
+rustllmroute-core.workspace = true
+rustllmroute-db.workspace = true
+rustllmroute-providers.workspace = true
+rustllmroute-types.workspace = true
+secrecy.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+subtle.workspace = true
+tokio.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[dev-dependencies]
+base64.workspace = true
+rstest.workspace = true
+rustllmroute-framer.workspace = true
+tempfile = "3"
+tokio-util.workspace = true
+wiremock.workspace = true

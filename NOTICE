@@ -1,0 +1,23 @@
+RustLLMroute
+Copyright (c) 2026 Fazmin Nizam
+Licensed under the MIT License (see LICENSE).
+
+This project includes material derived from LiteLLM (https://github.com/BerriAI/litellm),
+Copyright (c) 2023 Berri AI, licensed under the MIT License:
+
+- crates/rustllmroute-framer/src/sse.rs and aws_event_stream.rs: SSE and AWS event-stream
+  framing codecs from the litellm-rust workspace.
+- model_prices_and_context_window.json: the model pricing and context-window table.
+- crates/rustllmroute-guardrails/patterns.json: the content-filter pattern catalog.
+- The configuration file shape, management API shapes, `x-litellm-*` header names and
+  `litellm_*` metric names are kept for compatibility.
+
+The MIT License text for that material:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+and associated documentation files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions: The above copyright notice
+and this permission notice shall be included in all copies or substantial portions of the
+Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

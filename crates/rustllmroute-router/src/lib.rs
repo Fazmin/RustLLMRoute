@@ -1,0 +1,20 @@
+mod config;
+mod cooldown;
+mod deployment;
+mod execute;
+mod fallback;
+mod health;
+mod registry;
+mod retry;
+mod select;
+mod state;
+mod stats;
+mod strategy;
+
+pub use config::{RouterConfig, RoutingStrategy};
+pub use deployment::{Endpoint, RoutedDeployment, RouterMeta};
+pub use execute::{Attempt, AttemptGuard, AttemptUsage, Outcome, RequestCtx, Router, Selected};
+pub use health::{EndpointHealth, HealthReport, HealthState, HealthStatus};
+pub use registry::{Registry, Resolved, wildcard_matches};
+pub use state::{CooldownEntry, MemoryStateStore, RouterStateStore, StateSnapshot};
+pub use stats::{DeploymentStats, MinuteWindow, current_minute};

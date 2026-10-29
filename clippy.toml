@@ -1,0 +1,3 @@
+disallowed-methods = [
+  { path = "std::thread::sleep", reason = "blocks a tokio worker; use tokio::time::sleep" },
+]

@@ -1,0 +1,50 @@
+//! Metric names. LiteLLM names are kept where the semantics match so existing dashboards work.
+
+pub const PROXY_TOTAL_REQUESTS: &str = "litellm_proxy_total_requests_metric";
+pub const PROXY_FAILED_REQUESTS: &str = "litellm_proxy_failed_requests_metric";
+pub const REQUESTS: &str = "litellm_requests_metric";
+pub const LLM_API_FAILED_REQUESTS: &str = "litellm_llm_api_failed_requests_metric";
+pub const IN_FLIGHT_REQUESTS: &str = "litellm_in_flight_requests";
+pub const REQUEST_TOTAL_LATENCY: &str = "litellm_request_total_latency_metric";
+pub const OVERHEAD_LATENCY: &str = "litellm_overhead_latency_metric";
+pub const LLM_API_LATENCY: &str = "litellm_llm_api_latency_metric";
+pub const LLM_API_TTFT: &str = "litellm_llm_api_time_to_first_token_metric";
+pub const SPEND: &str = "litellm_spend_metric";
+pub const TOTAL_TOKENS: &str = "litellm_total_tokens_metric";
+pub const INPUT_TOKENS: &str = "litellm_input_tokens_metric";
+pub const OUTPUT_TOKENS: &str = "litellm_output_tokens_metric";
+pub const INPUT_CACHED_TOKENS: &str = "litellm_input_cached_tokens_metric";
+pub const ZERO_COST_REQUESTS: &str = "litellm_zero_cost_requests_total";
+pub const DEPLOYMENT_STATE: &str = "litellm_deployment_state";
+pub const DEPLOYMENT_TOTAL_REQUESTS: &str = "litellm_deployment_total_requests";
+pub const DEPLOYMENT_SUCCESS_RESPONSES: &str = "litellm_deployment_success_responses";
+pub const DEPLOYMENT_FAILURE_RESPONSES: &str = "litellm_deployment_failure_responses";
+pub const DEPLOYMENT_COOLED_DOWN: &str = "litellm_deployment_cooled_down";
+pub const DEPLOYMENT_SUCCESSFUL_FALLBACKS: &str = "litellm_deployment_successful_fallbacks";
+pub const DEPLOYMENT_FAILED_FALLBACKS: &str = "litellm_deployment_failed_fallbacks";
+pub const REMAINING_REQUESTS: &str = "litellm_remaining_requests_metric";
+pub const REMAINING_TOKENS: &str = "litellm_remaining_tokens_metric";
+pub const REMAINING_API_KEY_BUDGET: &str = "litellm_remaining_api_key_budget_metric";
+pub const API_KEY_MAX_BUDGET: &str = "litellm_api_key_max_budget_metric";
+pub const REMAINING_TEAM_BUDGET: &str = "litellm_remaining_team_budget_metric";
+pub const API_KEY_RATE_LIMIT_ALLOWED: &str = "litellm_api_key_rate_limit_allowed_metric";
+pub const API_KEY_RATE_LIMIT_USED: &str = "litellm_api_key_rate_limit_used_metric";
+pub const GUARDRAIL_REQUESTS: &str = "litellm_guardrail_requests_total";
+pub const GUARDRAIL_LATENCY: &str = "litellm_guardrail_latency_seconds";
+
+pub const SPEND_EVENTS: &str = "rustllmroute_spend_events_total";
+pub const SPEND_EVENTS_DROPPED: &str = "rustllmroute_spend_events_dropped_total";
+pub const SPEND_FLUSH_DURATION: &str = "rustllmroute_spend_flush_duration_seconds";
+pub const SPEND_FLUSH_FAILURES: &str = "rustllmroute_spend_flush_failures_total";
+pub const AUTH_CACHE: &str = "rustllmroute_auth_cache_total";
+pub const AUTH_STALE_SERVED: &str = "rustllmroute_auth_stale_served_total";
+pub const DB_QUERY_DURATION: &str = "rustllmroute_db_query_duration_seconds";
+pub const DB_ERRORS: &str = "rustllmroute_db_errors_total";
+pub const RATELIMIT_ENTRIES: &str = "rustllmroute_ratelimit_entries";
+pub const CONFIG_RELOADS: &str = "rustllmroute_config_reload_total";
+pub const BACKGROUND_TASK_LAST_RUN: &str =
+    "rustllmroute_background_task_last_run_timestamp_seconds";
+pub const BACKGROUND_TASK_FAILURES: &str = "rustllmroute_background_task_failures_total";
+pub const PRICING_REFRESH_FAILURES: &str = "rustllmroute_pricing_refresh_failures_total";
+pub const BUILD_INFO: &str = "rustllmroute_build_info";
+pub const RETRIES: &str = "rustllmroute_retries_total";
