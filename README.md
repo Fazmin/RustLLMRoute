@@ -54,6 +54,32 @@ including an OpenAI one; the gateway translates.
 
 Open `http://localhost:4000/ui/` and sign in with user `admin` and the master key as password.
 
+## Local models
+
+No cloud account needed. Ollama, LM Studio, vLLM and anything else that speaks the OpenAI
+wire format work as deployments, with no API key:
+
+```yaml
+model_list:
+  - model_name: llama
+    litellm_params:
+      model: ollama/llama3.2            # default api_base http://localhost:11434/v1
+  - model_name: local-qwen
+    litellm_params:
+      model: lm_studio/qwen2.5-7b       # default api_base http://localhost:1234/v1
+  - model_name: vllm-mistral
+    litellm_params:
+      model: hosted_vllm/mistralai/Mistral-7B-Instruct-v0.3
+      api_base: http://gpu-box:8000/v1
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+```
+
+Local and cloud deployments mix freely: give two entries the same `model_name` to load balance
+between them, or list a cloud model under `fallbacks` so requests move there when the local
+server is down. From inside Docker, point `api_base` at `http://host.docker.internal:11434/v1`
+(on Linux add `--add-host=host.docker.internal:host-gateway` to `docker run`).
+
 ## Adding it to your environment
 
 Three things grow with you, each optional:
